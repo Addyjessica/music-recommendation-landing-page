@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Intro Section -->
+    <header class="intro scroll-animation">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro-content">
+            <img src="/images/pexels-marta-wave-6437822.jpg" alt="Cover Image" class="cover-image">
+            <h1>My Music Recommendation System</h1>
+            <p>Discover music you'll love based on your unique tastes.</p>
+            <a href="https://your-deployed-app-url.com" class="cta-button">Try It Now</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="scroll-animation">
+        <h2>Key Features</h2>
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides fade scroll-animation">
+                <img src="/images/mohammad-metri-1oKxSKSOowE-unsplash.jpg" class="cover-image">
+                <div class="text">
+                    <h3>Personalized Playlists</h3>
+                    <p>Get playlists curated just for you based on your listening habits.</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="mySlides fade scroll-animation">
+                <img src="images/israel-palacio-Y20JJ_ddy9M-unsplash.jpg" class="cover-image">
+                <div class="text">
+                    <h3>Real-Time Updates</h3>
+                    <p>Stay updated with the latest hits and trending tracks in real-time.</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="mySlides fade scroll-animation">
+                <img src="images/pexels-zen-chung-5538011.jpg" class="cover-image">
+                <div class="text">
+                    <h3>Cross-Platform Sync</h3>
+                    <p>Sync your music preferences across all your devices effortlessly.</p>
+                </div>
+            </div>
+    
+            <!-- Navigation dots -->
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- About Section -->
+    <section id="about" class="scroll-animation">
+        <h2>About This Project</h2>
+        <p>This project was inspired by my love for discovering new music. I wanted to create a system that helps people find songs they'll love based on their personal preferences. This is a portfolio project for Holberton School.</p>
+        <div class="team">
+            <h3>Meet the Developer</h3>
+            <p>Hi, I'm Jessic Addy Tamona, a web developer passionate about music and technology.</p>
+            <img src="/images/p7.jpg" alt="developer photo" class="cover-image">
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/your-profile" target="_blank">GitHub</a></li>
+                <li><a href="https://twitter.com/your-profile" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
+        <p>Check out the source code on <a href="https://github.com/your-profile/portfolio-project" target="_blank">GitHub</a>.</p>
+    </section>
+
+
+    <!--conntact details-->
+
+    <section id="contact" class="scroll-animation">
+        <ul>
+
+            <h1 style="color: blue;">you can contact us on:</h1>
+            <li>0559145531</li>
+            <li>0504949728</li>
+        </ul>
+    
+
+    </section>
+    <!-- Optional: Video Section -->
+    <section id="video" class="scroll-animation">
+        <h2>Project Video</h2>
+        <video controls>
+            <source src="/images/olivetheboy_asylum_official_visualizer_h264_29656.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="scroll-animation">
+        <p>Contact me at <a href="mailto:addyjessica6@gmail.com">addyjessica6@gmail.com</a></p>
+        <p>Follow me on social media: 
+            <a href="https://twitter.com/jessyjame24" target="_blank">Twitter</a>, 
+            <a href="https://www.snapchat.com/jessyjame22" target="_blank">snapchat</a>
+        </p>
+    </footer>
+
+    <!--javascript here-->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+//scroll animation
+const scrollElements = document.querySelectorAll(".scroll-animation");
+
+const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add("scrolled");
+};
+
+const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        }
+    });
+};
+
+window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+});
+
+
+    </script>
+
+
+</body>
+</html>
